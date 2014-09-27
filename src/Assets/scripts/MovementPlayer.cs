@@ -6,10 +6,11 @@ public class MovementPlayer : MonoBehaviour {
 
 	private float force = 100f;					/**<force applied to the player object */
 	private float maxSpeed = 5f;	
+	private int playerNr;
 
 	// Use this for initialization
 	void Start () {
-	
+		playerNr = int.Parse (name.subString (name.Length - 1, 1));
 	}
 	
 	// Update is called once per frame
@@ -19,8 +20,8 @@ public class MovementPlayer : MonoBehaviour {
 
 	void FixedUpdate() {
 
-				float h = Input.GetAxis ("Horizontal");
-				float v = Input.GetAxis ("Vertical");
+				float h = Input.GetAxis ("Horizontal"+playerNr);
+				float v = Input.GetAxis ("Vertical"+playerNr);
 
 				/* add force to the player GameObject */
 				if (h * rigidbody2D.velocity.x < maxSpeed)
