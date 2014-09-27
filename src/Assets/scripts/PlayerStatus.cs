@@ -56,10 +56,17 @@ public class PlayerStatus : MonoBehaviour {
 
 	}
 
-	void Eat(float food) {
+	public void Eat(float food) {
 		hunger += food;
 		if (hunger > 100f) 
 			hunger = 100f;
+	}
+
+	public void AddWood (float wood) {
+		woodCollected += wood;
+		if (woodCollected > 100f) 
+			woodCollected = 100f;
+
 	}
 
 

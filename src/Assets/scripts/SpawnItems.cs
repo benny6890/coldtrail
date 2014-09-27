@@ -11,20 +11,22 @@ public class SpawnItems : MonoBehaviour {
 	public GameObject wood;
 	public GameObject food;
 	public GameObject wolf;
+	private int woodSpawned;
 
 	// Use this for initialization
 	void Start () {
 
 		Vector3 temp;
 
+
 		for (int i = 0;i<3; i++) {
 			temp = getRandomPoint ();
-			Instantiate(wood, temp, Quaternion.identity)
+			Instantiate (wood, temp, Quaternion.identity);
 		}
 
 		for (int i = 0;i<3; i++) {
 			temp = getRandomPoint ();
-			Instantiate(food, temp, Quaternion.identity)
+			Instantiate (food, temp, Quaternion.identity);
 		}
 
 	}
@@ -46,10 +48,10 @@ public class SpawnItems : MonoBehaviour {
 	
 	}
 
-	IEnumerator SpawnWood()
+/*	IEnumerator SpawnWood()
 	{
 
 
-	}
+	} */
 
 }

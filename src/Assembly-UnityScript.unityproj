@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{4CFFDA30-0E63-039E-0DCA-DAC117CE2649}</ProjectGuid>
+	<ProjectGuid>{AE3E4C40-759D-294E-DEEC-9C870A888A8B}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,17 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CollisionManagement.cs" />
-     <Compile Include="Assets\Path.cs" />
-     <Compile Include="Assets\createPath.cs" />
-     <Compile Include="Assets\drawPath.cs" />
-     <Compile Include="Assets\scripts\CollectItems.cs" />
-     <Compile Include="Assets\scripts\FireStatus.cs" />
-     <Compile Include="Assets\scripts\MovementPlayer.cs" />
-     <Compile Include="Assets\scripts\PlayerStatus.cs" />
-     <Compile Include="Assets\scripts\SpawnItems.cs" />
-     <Compile Include="Assets\scripts\TrailRendererWith2DCollider.cs" />
-     <Compile Include="Assets\scripts\Value.cs" />
+     <Compile Include="Assets\scripts\Footprints.js" />
+     <Compile Include="Assets\scripts\PlayerFootprints.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
