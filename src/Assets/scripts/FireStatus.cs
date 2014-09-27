@@ -7,6 +7,7 @@ public class FireStatus : MonoBehaviour {
 	public float burnSpeed = 0.05f;
 	public GameObject fire;
 	public GameObject border;
+	public GameObject flame;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +18,7 @@ public class FireStatus : MonoBehaviour {
 		border.transform.localScale = fireScale;
 	
 
-		StartCoroutine (Burn());
+		StartCoroutine ("Burn");
 
 
 	}
@@ -28,7 +29,15 @@ public class FireStatus : MonoBehaviour {
 		Vector2 fireScale = new Vector2 (fuel / 50f, fuel / 50f);
 		fire.transform.localScale = fireScale;
 		border.transform.localScale = fireScale;
-
+		if (fuel < 1f) {
+			border.SetActive(false);
+			fire.SetActive(false);
+			flame.SetActive(false);
+		} else {
+			border.SetActive(true);
+			fire.SetActive(true);
+			flame.SetActive(true);
+		}
 	}
 
 
