@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\MovementPlayer.cs">
+    <Files>
+      <File FileName="Assets\scripts\MovementPlayer.cs" Line="45" Column="1" />
+      <File FileName="Assets\scripts\TrailRendererWith2DCollider.cs" Line="1" Column="1" />
+      <File FileName="Assets\drawPath.cs" Line="19" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

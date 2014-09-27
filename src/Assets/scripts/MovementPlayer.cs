@@ -10,7 +10,7 @@ public class MovementPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerNr = int.Parse (name.subString (name.Length - 1, 1));
+		playerNr = int.Parse (name.Substring (name.Length - 1, 1));
 	}
 	
 	// Update is called once per frame
