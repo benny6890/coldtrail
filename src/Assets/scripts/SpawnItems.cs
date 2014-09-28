@@ -38,6 +38,7 @@ public class SpawnItems : MonoBehaviour {
 
 		StartCoroutine ("SpawnWood");
 		StartCoroutine ("SpawnFood");
+		StartCoroutine ("SpawnWolf");
 
 	}
 
