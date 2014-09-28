@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CollectItems : MonoBehaviour {
 
-	public GameObject game_logic;
+	public GameObject gameLogic;
 	// Use this for initialization
 	void Start () {
 	
@@ -20,12 +20,14 @@ public class CollectItems : MonoBehaviour {
 		//Debug.Log ("Enter:" + other.name);
 		if (other.name =="wood1(Clone)") {
 			this.GetComponent<PlayerStatus>().AddWood(other.GetComponent<Value>().value);
-			game_logic.GetComponent<SpawnItems> ().WoodCollected ();
+			gameLogic.GetComponent<SpawnItems> ().WoodCollected ();
+			gameLogic.GetComponent<AudioSystem> ().PlayCollectWood ();
 			Destroy (other.gameObject);
 			}
 		if (other.name == "food1(Clone)") {
 			this.GetComponent<PlayerStatus> ().Eat (other.GetComponent<Value> ().value);
-			game_logic.GetComponent<SpawnItems> ().FoodCollected ();
+			gameLogic.GetComponent<SpawnItems> ().FoodCollected ();
+			gameLogic.GetComponent<AudioSystem> ().PlayCollectFood ();
 			Destroy (other.gameObject);
 		}
 	}
