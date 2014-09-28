@@ -9,8 +9,10 @@ public class AudioSystem : MonoBehaviour {
 
 	public AudioClip collectFood;
 	public AudioClip collectWood;
-	public AudioClip[] BGM;
 	public AudioClip step;
+	public AudioClip death;
+	public AudioClip[] BGM;
+
 
 	public float volumeBGM = 0.7f;
 	public float volumeSFX = 0.8f;
@@ -55,6 +57,11 @@ public class AudioSystem : MonoBehaviour {
 
 	public void PlayStep() {
 		SFX.clip = step;
+		SFX.Play ();
+	}
+
+	public void PlayDeath() {
+		SFX.clip = death;
 		SFX.Play ();
 	}
 
