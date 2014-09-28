@@ -74,6 +74,7 @@ public class PlayerStatus : MonoBehaviour {
 
 	void OnTriggerEnter2D( Collider2D other) {
 		if (other.name == "fire_flare") {
+			this.transform.GetChild(0).gameObject.SetActive(false);
 			StopCoroutine ("Freeze");
 			StartCoroutine ("WarmUp");
 		}
@@ -89,6 +90,8 @@ public class PlayerStatus : MonoBehaviour {
 
 	void OnTriggerExit2D( Collider2D other) {
 		if (other.name == "fire_flare") {
+			this.transform.GetChild(0).gameObject.SetActive(true);
+			
 			StopCoroutine ("WarmUp");
 			StartCoroutine ("Freeze");
 			}
