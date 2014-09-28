@@ -15,6 +15,7 @@ public class MovementPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 	
 	}
 
@@ -41,4 +42,25 @@ public class MovementPlayer : MonoBehaviour {
 				if (Mathf.Abs (rigidbody2D.velocity.y) > maxSpeed)
 						rigidbody2D.velocity = new Vector2 (0f, Mathf.Sign (rigidbody2D.velocity.y) * maxSpeed);
 		}
+
+
+	/*IEnumerator FootSteps()
+	{
+		float time;
+
+
+		do {
+
+			time = Random.Range (1.0f, 5.0f);
+			Vector2 temp = GetRandomPoint ();
+
+			if (foodSpawned < nrMaxFood) {
+				Instantiate (food, temp, Quaternion.identity);
+				foodSpawned++;
+			}
+			yield return new WaitForSeconds (1f);
+		} while (rigidbody2D.velocity.sqrMagnitude< );
+
+	} */ 
+
 }
