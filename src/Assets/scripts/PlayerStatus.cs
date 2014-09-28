@@ -8,6 +8,8 @@ public class PlayerStatus : MonoBehaviour {
 
 	float woodCollected = 0f;
 
+	public GameObject firePlace;
+
 	public float hungerSpeed = 0.05f;
 	public float freezeSpeed = 0.05f;
 	public float warmUpSpeed = 1f;
@@ -76,7 +78,14 @@ public class PlayerStatus : MonoBehaviour {
 			StartCoroutine ("WarmUp");
 		}
 
+		if (other.name == "fire_wood") {
+			firePlace.GetComponent<FireStatus> ().AddFuel (woodCollected);
+			woodCollected = 0;
+		}
+
+
 	}
+
 
 	void OnTriggerExit2D( Collider2D other) {
 		if (other.name == "fire_flare") {

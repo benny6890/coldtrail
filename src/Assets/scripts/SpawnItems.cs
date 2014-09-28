@@ -12,6 +12,7 @@ public class SpawnItems : MonoBehaviour {
 	public GameObject food;
 	public GameObject wolf;
 	private int woodSpawned;
+	private int foodSpawned;
 
 	// Use this for initialization
 	void Start () {
@@ -20,19 +21,34 @@ public class SpawnItems : MonoBehaviour {
 
 
 		for (int i = 0;i<3; i++) {
-			temp = getRandomPoint ();
+			temp = GetRandomPoint ();
 			Instantiate (wood, temp, Quaternion.identity);
+			woodSpawned++;
 		}
 
 		for (int i = 0;i<3; i++) {
-			temp = getRandomPoint ();
+			temp = GetRandomPoint ();
 			Instantiate (food, temp, Quaternion.identity);
+			foodSpawned++;
 		}
+
+		StartCoroutine ("SpawnWood");
+		StartCoroutine ("SpawnFood");
 
 	}
 
+	public void WoodCollected (){
+		if (woodSpawned > 0) 
+			woodSpawned--;
+	}
 
-	Vector3 getRandomPoint()	{
+	public void FoodCollected() {
+		if (foodSpawned > 0)
+			foodSpawned--;
+	}
+
+
+	Vector3 GetRandomPoint()	{
 		float x, y;
 	
 		do {
@@ -48,10 +64,43 @@ public class SpawnItems : MonoBehaviour {
 	
 	}
 
-/*	IEnumerator SpawnWood()
+	IEnumerator SpawnWood()
 	{
+		float time;
 
 
-	} */
+		do {
+
+			time = Random.Range (1.0f, 5.0f);
+			Vector2 temp = GetRandomPoint ();
+
+			if (woodSpawned < nrMaxWood) {
+				Instantiate (wood, temp, Quaternion.identity);
+				woodSpawned++;
+			}
+			yield return new WaitForSeconds (time);
+		} while (true );
+
+	} 
+
+	IEnumerator SpawnFood()
+	{
+		float time;
+
+
+		do {
+
+			time = Random.Range (1.0f, 5.0f);
+			Vector2 temp = GetRandomPoint ();
+
+			if (foodSpawned < nrMaxFood) {
+				Instantiate (food, temp, Quaternion.identity);
+				foodSpawned++;
+			}
+			yield return new WaitForSeconds (time);
+		} while (true );
+
+	} 
+
 
 }

@@ -41,7 +41,7 @@ public class FireStatus : MonoBehaviour {
 	}
 
 
-	void AddFuel(float f)
+	public void AddFuel(float f)
 	{
 		fuel += f;
 		if (fuel > 100f)
