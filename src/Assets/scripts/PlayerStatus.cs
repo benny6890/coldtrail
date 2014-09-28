@@ -22,6 +22,8 @@ public class PlayerStatus : MonoBehaviour {
 	public Texture2D HpBarTexture;
 	public Texture2D WBarTexture;
 	public Texture2D BackGroundTexture;
+	public GameObject blood;
+	
 	// Use this for initialization
 	void Start () {
 
@@ -46,6 +48,12 @@ public class PlayerStatus : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (hunger <= 0 || warmth <= 0) {
+			Instantiate(blood, this.transform.position, Quaternion.identity);
+			this.gameObject.SetActive(false);
+
+			//Quaternion.identity
+		}
 	
 	}
 

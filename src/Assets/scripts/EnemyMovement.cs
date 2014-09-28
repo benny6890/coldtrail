@@ -100,7 +100,7 @@ public class EnemyMovement : MonoBehaviour
 			if (other.name.Length >= 6 && other.name.Substring (0, 6).Equals ("player")) {
 				isHuntingPlayer = false;
 				other.transform.root.gameObject.tag = "dead";
-				Destroy (other.gameObject);
+				 (other.gameObject).SetActive(false);
 				
 				
 				GameObject[] allPlayers = GameObject.FindGameObjectsWithTag ("Player");
