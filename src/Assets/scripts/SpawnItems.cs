@@ -7,12 +7,16 @@ public class SpawnItems : MonoBehaviour {
 	public float sizeY = 5f;
 	public int nrMaxFood = 5;
 	public int nrMaxWood = 5;
+	public int nrMaxWolfs = 5;
 	public float radiusFire = 2f;
+	public Vector2 ItemSpawnTime = new Vector2 (1.0f, 5.0f);
+	public Vector2 EnemySpawnTime = new Vector2 (2.0f, 5.0f);
 	public GameObject wood;
 	public GameObject food;
 	public GameObject wolf;
 	private int woodSpawned;
 	private int foodSpawned;
+	private int wolfSpawned;
 
 	// Use this for initialization
 	void Start () {
@@ -71,7 +75,7 @@ public class SpawnItems : MonoBehaviour {
 
 		do {
 
-			time = Random.Range (1.0f, 5.0f);
+			time = Random.Range (ItemSpawnTime.x, ItemSpawnTime.y);
 			Vector2 temp = GetRandomPoint ();
 
 			if (woodSpawned < nrMaxWood) {
@@ -83,14 +87,33 @@ public class SpawnItems : MonoBehaviour {
 
 	} 
 
-	IEnumerator SpawnFood()
+
+	IEnumerator SpawnWolf()
 	{
 		float time;
 
 
 		do {
 
-			time = Random.Range (1.0f, 5.0f);
+			time = Random.Range (EnemySpawnTime.x, EnemySpawnTime.y);
+			Vector2 temp = GetRandomPoint ();
+
+			if (wolfSpawned < nrMaxWolfs) {
+				Instantiate (wolf, temp, Quaternion.identity);
+				wolfSpawned++;
+			}
+			yield return new WaitForSeconds (time);
+		} while (true );
+
+	} 
+
+	IEnumerator SpawnFood()
+	{
+		float time;
+
+		do {
+
+			time = Random.Range (ItemSpawnTime.x, ItemSpawnTime.y);
 			Vector2 temp = GetRandomPoint ();
 
 			if (foodSpawned < nrMaxFood) {
