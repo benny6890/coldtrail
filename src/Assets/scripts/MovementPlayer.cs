@@ -4,8 +4,8 @@ using System.Collections;
 public class MovementPlayer : MonoBehaviour {
 
 
-	private float force = 100f;					/**<force applied to the player object */
-	private float maxSpeed = 5f;	
+	public float force = 100f;					/**<force applied to the player object */
+	public float maxSpeed = 5f;	
 	private int playerNr;
 
 	// Use this for initialization

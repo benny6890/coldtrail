@@ -18,6 +18,8 @@ public class SpawnItems : MonoBehaviour {
 	private int foodSpawned;
 	private int wolfSpawned;
 
+	public GameObject[] players;
+
 	// Use this for initialization
 	void Start () {
 
@@ -49,13 +51,18 @@ public class SpawnItems : MonoBehaviour {
 		StopCoroutine ("SpawnFood");
 		StopCoroutine ("SpawnWolf");
 
+		GameObject fire = GameObject.Find ("fire_flare");
+		fire.GetComponent<FireStatus> ().AddFuel (100f);
+
 		GameObject[] objlist = GameObject.FindGameObjectsWithTag ("item");
 		for (int i = 0; i< objlist.Length; i++)
 			Destroy (objlist [i]);
+	
+		for (int i = 0; i< players.Length; i++) {
+			players [i].SetActive (true);
+			players[i].GetComponent<PlayerStatus>().ResetPlayer ();
+		}
 
-		objlist = GameObject.FindGameObjectsWithTag ("Player");
-		for (int i = 0; i< objlist.Length; i++)
-			objlist [i].GetComponent<PlayerStatus> ().ResetPlayer ();
 
 		this.Start ();
 

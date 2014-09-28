@@ -83,7 +83,7 @@ public class PlayerStatus : MonoBehaviour {
 		warmth = 100f;
 
 		int playerNr = int.Parse (name.Substring (name.Length - 1, 1));
-		this.SetActive (true);
+		this.gameObject.SetActive (true);
 		switch (playerNr) {
 		case 1: 
 			transform.position = new Vector2 (0, startRadius);

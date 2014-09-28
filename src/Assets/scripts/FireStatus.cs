@@ -40,7 +40,6 @@ public class FireStatus : MonoBehaviour {
 		}
 	}
 
-
 	public void AddFuel(float f)
 	{
 		fuel += f;

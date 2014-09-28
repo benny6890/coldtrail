@@ -101,7 +101,7 @@ public class EnemyMovement : MonoBehaviour
 			if (other.name.Length >= 6 && other.name.Substring (0, 6).Equals ("player")) {
 				isHuntingPlayer = false;
 				Instantiate(blood, transform.position, Quaternion.identity);
-				other.transform.root.gameObject.tag = "dead";
+				//other.transform.root.gameObject.tag = "dead";
 			
 				(other.gameObject).SetActive(false);
 				
