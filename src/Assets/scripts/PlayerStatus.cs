@@ -52,8 +52,6 @@ public class PlayerStatus : MonoBehaviour {
 		if (hunger <= 0 || warmth <= 0) {
 			Instantiate(blood, this.transform.position, Quaternion.identity);
 			this.gameObject.SetActive(false);
-
-			//Quaternion.identity
 		}
 	
 	}

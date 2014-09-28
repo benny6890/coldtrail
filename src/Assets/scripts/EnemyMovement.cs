@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
 		public int maxX = 10;
 		public int minY = -10;
 		public int maxY = 10;
+		public GameObject blood;
 		Vector3 nextPosition;
 
 		//Vector2 moveTowards;
@@ -99,8 +100,10 @@ public class EnemyMovement : MonoBehaviour
 			
 			if (other.name.Length >= 6 && other.name.Substring (0, 6).Equals ("player")) {
 				isHuntingPlayer = false;
+				Instantiate(blood, transform.position, Quaternion.identity);
 				other.transform.root.gameObject.tag = "dead";
-				 (other.gameObject).SetActive(false);
+			
+				(other.gameObject).SetActive(false);
 				
 				
 				GameObject[] allPlayers = GameObject.FindGameObjectsWithTag ("Player");
