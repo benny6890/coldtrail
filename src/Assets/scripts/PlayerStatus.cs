@@ -13,6 +13,7 @@ public class PlayerStatus : MonoBehaviour {
 	public float hungerSpeed = 0.05f;
 	public float freezeSpeed = 0.05f;
 	public float warmUpSpeed = 1f;
+	public float startRadius = 1.5f;
 	public int hSize = 34;
 	public int vSize = 4;
 	public int borderSize = 1;
@@ -79,6 +80,29 @@ public class PlayerStatus : MonoBehaviour {
 
 	}
 
+	public void ResetPlayer() {
+		hunger = 100f;
+		warmth = 100f;
+
+		int playerNr = int.Parse (name.Substring (name.Length - 1, 1));
+		switch (playerNr) {
+		case 1: 
+			transform.position = new Vector2 (0, startRadius);
+			break;
+		case 2: 
+			transform.position = new Vector2 (-startRadius,0);
+			break;		
+		case 3: 
+			transform.position = new Vector2 (0,-startRadius);
+			break;
+		case 4: 
+			transform.position = new Vector2 (startRadius,0);
+			break;
+		default: 
+			break;
+		}
+
+	}
 
 	void OnTriggerEnter2D( Collider2D other) {
 		if (other.name == "fire_flare") {

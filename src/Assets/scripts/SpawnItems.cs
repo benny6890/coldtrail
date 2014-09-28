@@ -22,7 +22,9 @@ public class SpawnItems : MonoBehaviour {
 	void Start () {
 
 		Vector3 temp;
-
+		woodSpawned=0;
+		foodSpawned=0;
+		wolfSpawned=0;
 
 		for (int i = 0;i<3; i++) {
 			temp = GetRandomPoint ();
@@ -41,6 +43,28 @@ public class SpawnItems : MonoBehaviour {
 		StartCoroutine ("SpawnWolf");
 
 	}
+
+	public void ResetGame (){
+		StopCoroutine ("SpawnWood");
+		StopCoroutine ("SpawnFood");
+		StopCoroutine ("SpawnWolf");
+
+		GameObject[] objlist = GameObject.FindGameObjectsWithTag ("item");
+		for (int i = 0; i< objlist.Length; i++)
+			Destroy (objlist [i]);
+
+		objlist = GameObject.FindGameObjectsWithTag ("Player");
+		for (int i = 0; i< objlist.Length; i++)
+			objlist [i].GetComponent<PlayerStatus> ().ResetPlayer ();
+
+		this.Start ();
+
+	}
+
+
+
+
+
 
 	public void WoodCollected (){
 		if (woodSpawned > 0) 
@@ -66,7 +90,8 @@ public class SpawnItems : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetKeyUp (KeyCode.Space)) 
+			ResetGame();
 	}
 
 	IEnumerator SpawnWood()
