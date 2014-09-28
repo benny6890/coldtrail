@@ -11,6 +11,8 @@ public class AudioSystem : MonoBehaviour {
 	public AudioClip collectWood;
 	public AudioClip step;
 	public AudioClip death;
+	public AudioClip hungerDeath;
+	public AudioClip wolfAggro;
 	public AudioClip[] BGM;
 
 
@@ -58,6 +60,10 @@ public class AudioSystem : MonoBehaviour {
 	public void PlayStep() {
 		SFX.clip = step;
 		SFX.Play ();
+	}
+
+	public void PlayHungerDeath() {
+
 	}
 
 	public void PlayDeath() {
