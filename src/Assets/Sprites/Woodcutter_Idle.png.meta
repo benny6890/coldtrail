@@ -1,7 +1,8 @@
 fileFormatVersion: 2
-guid: 42076bae22e73c44cbd7169e487ef09c
+guid: 7d49b9116e7a3fc41affd4ce00172dd7
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Woodcutter_Idle
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
