@@ -28,7 +28,7 @@ public class PlayerStatus : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		StartCoroutine (Starve());
+		StartCoroutine ("Starve");
 		if (HpBarTexture == null) {
 			HpBarTexture = new Texture2D (1, 1, TextureFormat.ARGB32, false);
 			HpBarTexture.SetPixel (0, 0, Color.green);
@@ -81,7 +81,7 @@ public class PlayerStatus : MonoBehaviour {
 	public void ResetPlayer() {
 		hunger = 100f;
 		warmth = 100f;
-
+		StopCoroutine ("Starve");
 		int playerNr = int.Parse (name.Substring (name.Length - 1, 1));
 		this.gameObject.SetActive (true);
 		switch (playerNr) {
@@ -100,7 +100,7 @@ public class PlayerStatus : MonoBehaviour {
 		default: 
 			break;
 		}
-
+		StartCoroutine ("Starve");
 	}
 
 	void OnTriggerEnter2D( Collider2D other) {
